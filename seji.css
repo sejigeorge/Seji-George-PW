@@ -1,0 +1,212 @@
+/* General Styling */
+html, body {
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent white space issue */
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: black;
+    padding: 10px 20px;
+}
+
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.nav-custom {
+    color: #f8f9fa;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-custom:hover {
+    color: #17a2b8;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+
+/* Heading Styling */
+h2 {
+    color: white;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Social Links */
+.social-links a {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    word-wrap: break-word;
+    max-width: 100%;
+    white-space: normal; /* Allows wrapping */
+}
+
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 95%; /* Prevents overflow */
+}
+
+.social-links i {
+    margin-right: 8px;
+    min-width: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* Home Section */
+.home-section {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+    max-width: 100vw;
+}
+
+.name-highlight {
+    color: #17a2b8;
+    font-weight: bold;
+}
+
+/* Skills Section */
+#skills {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.skill-box {
+    display: inline-block;
+    padding: 20px;
+    border: 2px solid #17a2b8;
+    border-radius: 10px;
+    margin: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 200px; /* Prevent text overflow */
+}
+
+.skill-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    white-space: normal; /* Allows text wrapping */
+    padding: 15px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .profile-pic {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    /* Fix alignment of social links */
+    .social-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding-left: 10px;
+    }
+    
+    .social-links a {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal; /* Allows text wrapping */
+        max-width: 100%; /* Takes full width */
+    }
+    
+
+    .home-section {
+        padding: 50px 20px;
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 576px) {
+    .profile-pic {
+        width: 50px;
+        height: 50px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .social-links a {
+        font-size: 12px;
+        flex-wrap: wrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .social-links span {
+        display: block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
