@@ -79,6 +79,7 @@
         .navbar-nav {
             margin-left: auto;
         }
+    
 
         .nav-item a {
             color: white !important;
@@ -139,20 +140,51 @@
                 max-width: 60%;
             }
         }
+        
+        /* Cursor */
+        .cursor{
+            position: relative;
+            width: 24em;
+            margin: 0 auto;
+           
+    
+            white-space: nowrap;
+            overflow: hidden;
+            transform: translateY(-50%);    
+        }
+        /* Animation */
+        .typewriter-animation {
+        animation: 
+            typewriter 5s steps(50) 1s 1 normal both, 
+            blinkingCursor 500ms steps(50) infinite normal;
+        }
+        @keyframes typewriter {
+        from { width: 0; }
+        to { width: 100%; }
+        }
+        @keyframes blinkingCursor{
+        from { border-right-color: rgba(255,255,255,.75); }
+        to { border-right-color: transparent; }
+        }
     </style>
 </head>
 <body>
 
     <header class="container-fluid">
-        <div class="header-container">
-            <img src="PXL_20240530_170854347-modified.png" alt="Seji George" class="profile-pic">
-
-            <div class="name-title">
-                <h2>SEJI GEORGE</h2>
-                <h5>Electronics and Communication Engineer</h5>
-            </div>
+        <div style="display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Poppins', sans-serif; gap: 25px; width: 100%;">
+            <img src="PXL_20240530_170854347-modified.png" alt="Seji George" 
+                 style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
+            <div>
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #ffffff; text-transform: uppercase; letter-spacing: 2px; margin: 0;">
+                    SEJI GEORGE
+                </h2>
+                <h5 style="font-size: 1.2rem; font-weight: 500; color: #ffffff; margin: 5px 0 0; text-transform: capitalize;">
+                    Electronics and Communication Engineer
+                </h5>
             </div>
         </div>
+        
+
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
@@ -176,13 +208,45 @@
     <section id="home" class="container-fluid home-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 text-left">
-                    <h1 class="home-title">Hi! I am <span class="name-highlight">SEJI GEORGE</span></h1>
+                <div class="col-lg-6 text-left mb-4">
+                    <h1 class="home-title cursor typewriter-animation">Hi! I am <span class="name-highlight">SEJI GEORGE</span></h1>
                     <p class="home-description">
                         Passionate about creating visually appealing and user-friendly web experiences with a strong foundation in HTML and CSS. 
                         Currently expanding skills in JavaScript, UI/UX design, and exploring cloud computing. 
                         Continuously learning and growing to contribute to innovative projects and enhance development expertise.
                     </p>
+                    <a href="sejiwebresume@1.pdf" download class="icon-btn">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                    
+                    <style>
+                    .icon-btn {
+                        display: inline-flex;
+                        align-items: center;
+                        padding: 12px 25px;
+                        background-color: #17a2b8; 
+                        color: white;
+                        font-size: 18px;
+                        font-weight: bold;
+                        border-radius: 8px;
+                        text-decoration: none;
+                        transition: all 0.3s ease-in-out;
+                        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+                    }
+                    
+                    .icon-btn i {
+                        margin-right: 10px;
+                        font-size: 20px;
+                    }
+                    
+                    .icon-btn:hover {
+                        background-color: #138496;
+                        transform: scale(1.1);
+                    }
+                    </style>
+                    
+                    
+                    
                 </div>
                 <div class="col-lg-6 text-center">
                     <img src="PXL_20240530_170853279-Photoroom.png" alt="Seji George" class="profile-image">
@@ -199,7 +263,7 @@
                 const target = document.querySelector(this.getAttribute("href"));
                 if (target) {
                     window.scrollTo({
-                        top: target.offsetTop - 70, // Adjust for fixed navbar
+                        top: target.offsetTop - 70,
                         behavior: "smooth"
                     });
                 }
@@ -216,56 +280,128 @@
             </h2>
         </div>
 
-        <div class="row">
-            
-            <div class="col-md-4 mb-4">
-                <div class="p-4 shadow-sm bg-white rounded h-100">
-                    <h4><i class="fab fa-html5 text-danger"></i> HTML</h4>
-                    <p>Strong knowledge in structuring web pages with semantic and accessible markup. Skilled in forms, tables, and SEO-friendly coding practices.</p>
-                </div>
-            </div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Section</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .icon-box {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+        .icon-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+        }
+        .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .skill-box {
+            display: none; 
+        }
+    </style>
+</head>
+<body class="bg-light">
 
-            <div class="col-md-4 mb-4">
-                <div class="p-4 shadow-sm bg-white rounded h-100">
-                    <h4><i class="fab fa-css3-alt text-primary"></i> CSS</h4>
-                    <p>Expertise in designing responsive and visually appealing layouts using Flexbox, Grid, animations, and media queries.</p>
-                </div>
+<div class="container mt-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-3">
+            <div class="icon-box" onclick="showSkill('html')">
+                <i class="fab fa-html5 text-danger icon"></i>
+                <h5>HTML</h5>
             </div>
-
-            
-            <div class="col-md-4 mb-4">
-                <div class="p-4 shadow-sm bg-white rounded h-100">
-                    <h4><i class="fab fa-js text-warning"></i> JavaScript</h4>
-                    <p>Expanding skills in JavaScript for dynamic web pages, including DOM manipulation, event handling, and ES6 concepts.</p>
-                </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="icon-box" onclick="showSkill('css')">
+                <i class="fab fa-css3-alt text-primary icon"></i>
+                <h5>CSS</h5>
             </div>
-
-            
-            <div class="col-md-4 mb-4">
-                <div class="p-4 shadow-sm bg-white rounded h-100">
-                    <h4><i class="fab fa-bootstrap text-purple"></i> Bootstrap</h4>
-                    <p>Good grasp of Bootstrap for fast, responsive web development, using its grid system, components, and utilities.</p>
-                </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="icon-box" onclick="showSkill('js')">
+                <i class="fab fa-js text-warning icon"></i>
+                <h5>JavaScript</h5>
             </div>
-
-            
-            <div class="col-md-4 mb-4">
-                <div class="p-4 shadow-sm bg-white rounded h-100">
-                    <h4><i class="fas fa-paint-brush text-info"></i> UI/UX Design</h4>
-                    <p>Learning user-centered design, wireframing, and prototyping to enhance usability and user experience.</p>
-                </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="icon-box" onclick="showSkill('bootstrap')">
+                <i class="fab fa-bootstrap text-purple icon"></i>
+                <h5>Bootstrap</h5>
             </div>
-
-            
-            <div class="col-md-4 mb-4">
-                <div class="p-4 shadow-sm bg-white rounded h-100">
-                    <h4><i class="fab fa-aws text-orange"></i> AWS</h4>
-                    <p>Exploring cloud infrastructure, including S3 storage, EC2 instances, and IAM roles for cloud-based applications.</p>
-                </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="icon-box" onclick="showSkill('uiux')">
+                <i class="fas fa-paint-brush text-info icon"></i>
+                <h5>UI/UX Design</h5>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="icon-box" onclick="showSkill('aws')">
+                <i class="fab fa-aws text-orange icon"></i>
+                <h5>AWS</h5>
             </div>
         </div>
     </div>
-</section>
+
+    <div class="row mt-4">
+        <div class="col-md-6 mx-auto">
+            <div id="html" class="skill-box p-4 shadow-sm bg-white rounded">
+                <h4><i class="fab fa-html5 text-danger"></i> HTML</h4>
+                <p>Strong knowledge in structuring web pages with semantic and accessible markup. Skilled in forms, tables, and SEO-friendly coding practices.</p>
+            </div>
+
+            <div id="css" class="skill-box p-4 shadow-sm bg-white rounded">
+                <h4><i class="fab fa-css3-alt text-primary"></i> CSS</h4>
+                <p>Expertise in designing responsive and visually appealing layouts using Flexbox, Grid, animations, and media queries.</p>
+            </div>
+
+            <div id="js" class="skill-box p-4 shadow-sm bg-white rounded">
+                <h4><i class="fab fa-js text-warning"></i> JavaScript</h4>
+                <p>Expanding skills in JavaScript for dynamic web pages, including DOM manipulation, event handling, and ES6 concepts.</p>
+            </div>
+
+            <div id="bootstrap" class="skill-box p-4 shadow-sm bg-white rounded">
+                <h4><i class="fab fa-bootstrap text-purple"></i> Bootstrap</h4>
+                <p>Good grasp of Bootstrap for fast, responsive web development, using its grid system, components, and utilities.</p>
+            </div>
+
+            <div id="uiux" class="skill-box p-4 shadow-sm bg-white rounded">
+                <h4><i class="fas fa-paint-brush text-info"></i> UI/UX Design</h4>
+                <p>Learning user-centered design, wireframing, and prototyping to enhance usability and user experience.</p>
+            </div>
+
+            <div id="aws" class="skill-box p-4 shadow-sm bg-white rounded">
+                <h4><i class="fab fa-aws text-orange"></i> AWS</h4>
+                <p>Exploring cloud infrastructure, including S3 storage, EC2 instances, and IAM roles for cloud-based applications.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showSkill(skill) {
+        $(".skill-box").hide(); 
+        $("#" + skill).fadeIn();
+        $('html, body').animate({
+            scrollTop: $("#" + skill).offset().top - 50
+        }, 500); // Smooth scroll to the description
+    }
+</script>
+
+</body>
+</html>
+
 
 <section id="projects" class="container-fluid py-5" style="background-color: #f8f9fa; padding-top: 100px;">
     <div class="container">
@@ -333,10 +469,9 @@
                         <i class="fas fa-code"></i> Frontend Development
                     </h4>
                     <p>
-                        🔹 Building <strong>responsive</strong> and <strong>visually appealing</strong> websites using <strong>HTML, CSS, JavaScript, and Bootstrap</strong>.<br>
-                        🔹 Creating <strong>custom UI components</strong> for web applications.<br>
-                        🔹 Developing <strong>landing pages</strong> and <strong>portfolios</strong> with modern UI/UX principles.
-                    </p>
+                        🔹 Building responsive and visually appealing websites using HTML, CSS, JavaScript, and Bootstrap.<br>
+                        🔹 Creating custom UI components for web applications.<br>
+                        🔹 Developing landing pages.
                 </div>
             </div>
             <div class="col-md-12 mb-4">
@@ -345,9 +480,9 @@
                         <i class="fas fa-palette"></i> UI/UX Design Services
                     </h4>
                     <p>
-                        🔹 Wireframing and <strong>prototyping</strong> using <strong>Figma</strong>.<br>
-                        🔹 Structuring <strong>application workflows</strong> and visualizing user processes.<br>
-                        🔹 Designing <strong>intuitive</strong> and <strong>user-friendly</strong> interfaces that enhance user experience.
+                        🔹 Wireframing and prototyping using Figma.<br>
+                        🔹 Structuring application workflows and visualizing user processes.<br>
+                        🔹 Designing intuitive and user-friendly interfaces that enhance user experience.
                     </p>
                 </div>
             </div>
@@ -362,54 +497,70 @@
             </h2>
         </div>
 
-        <div class="row justify-content-right">
-            <div class="col-md-8">
-                <div class="p-4 shadow-sm bg-white rounded">
-                    <h4 style="color: #17a2b8; font-weight: 600;">
-                        <i class="fas fa-phone"></i> Phone
-                    </h4>
-                    <p> <strong>9074121013</strong></p>
-
-                    <h4 style="color: #17a2b8; font-weight: 600;">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </h4>
-                    <p>
-                        <a href="http://linkedin.com/in/seji-george-2ab075293" target="_blank" style="color: #0073b1; text-decoration: none;">
-                            linkedin.com/in/seji-george-2ab075293
-                        </a>
-                    </p>
-
-                    <h4 style="color: #17a2b8; font-weight: 600;">
-                        <i class="fas fa-envelope"></i> Email
-                    </h4>
-                    <p>
-                        <a href="mailto:sejigeorge71@gmail.com" style="color: #c71610; text-decoration: none;">
-                            sejigeorge71@gmail.com
-                        </a>
-                    </p>
-
-                    <h4 style="color: #17a2b8; font-weight: 600;">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </h4>
-                    <p>
-                        <a href="https://www.instagram.com/seji_george?igsh=NGhvdDhxdTFiNW0y" target="_blank" style="color: #bc2a8d; text-decoration: none;">
-                            instagram.com/seji_george
-                        </a>
-                    </p>
-
-                    <h4 style="color: #17a2b8; font-weight: 600;">
-                        <i class="fab fa-facebook"></i> Facebook
-                    </h4>
-                    <p>
-                        <a href="https://www.facebook.com/share/1FY8nrJ1Ub/?mibextid=qi2Omg" target="_blank" style="color: #1877f2; text-decoration: none;">
-                            facebook.com/share/1FY8nrJ1Ub
-                        </a>
-                    </p>
+        <div style="max-width: 800px; margin: auto; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+            <footer style="text-align: center;">
+                <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+                    
+                    <div style="text-align: center;">
+                        <p style="font-weight: bold; color: #0a66c2; margin-bottom: 5px;">
+                            <i class="fas fa-phone"></i> Phone
+                        </p>
+                        <a href="tel:9074121013" class="footer-link">9074121013</a>
+                    </div>
+        
+                    <div style="text-align: center;">
+                        <p style="font-weight: bold; color: #0a66c2; margin-bottom: 5px;">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </p>
+                        <a href="https://linkedin.com/in/seji-george-2ab075293" target="_blank" class="footer-link">seji-george</a>
+                    </div>
+        
+                    <div style="text-align: center;">
+                        <p style="font-weight: bold; color: #0a66c2; margin-bottom: 5px;">
+                            <i class="fas fa-envelope"></i> Email
+                        </p>
+                        <a href="mailto:sejigeorge71@gmail.com" class="footer-link">sejigeorge71@gmail.com</a>
+                    </div>
+        
+                    <div style="text-align: center;">
+                        <p style="font-weight: bold; color: #0a66c2; margin-bottom: 5px;">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </p>
+                        <a href="https://instagram.com/seji_george" target="_blank" class="footer-link">seji_george</a>
+                    </div>
+        
+                    <div style="text-align: center;">
+                        <p style="font-weight: bold; color: #0a66c2; margin-bottom: 5px;">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </p>
+                        <a href="https://facebook.com/share/1FY8nrJ1Ub" target="_blank" class="footer-link">Facebook</a>
+                    </div>
+        
                 </div>
-            </div>
+            </footer>
         </div>
-    </div>
-</section>
+        
+        <!-- Global Footer Styles -->
+        <style>
+            .footer-link {
+                color: #0a66c2;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: bold;
+                transition: all 0.3s ease-in-out;
+                display: inline-block;
+            }
+        
+            .footer-link:hover {
+                color: #004182;
+                transform: scale(1.1);
+                text-decoration: underline;
+            }
+        </style>
+        
+        <!-- FontAwesome for Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        
 <button id="backToTop" title="Go to Top">
     <i class="fas fa-arrow-up"></i>
 </button>
@@ -429,6 +580,30 @@
         });
     });
 </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seji George - Portfolio</title>
+    <style>
+        .download-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+</html>
+
 
 <style>
     #backToTop {
